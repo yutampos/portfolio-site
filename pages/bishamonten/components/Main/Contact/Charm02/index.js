@@ -104,11 +104,11 @@ const formTypes = [
   },
 ];
 const AddressInputsDetail = ({ Inputs }) => {
-  return Inputs.map((data) => {
+  return Inputs.map((data, index) => {
     switch (data.type) {
       case "ZIP_CODE":
         return (
-          <Grid>
+          <Grid key={index}>
             <input
               style={{
                 width: "200px",
@@ -126,7 +126,7 @@ const AddressInputsDetail = ({ Inputs }) => {
         );
       case "PREFECTURE":
         return (
-          <Grid>
+          <Grid key={index}>
             <select
               style={{
                 width: "200px",
@@ -139,8 +139,8 @@ const AddressInputsDetail = ({ Inputs }) => {
               }}
               placeholder={data.placeholder}
             >
-              {data.list.map((menuItem) => {
-                return <option>{menuItem}</option>;
+              {data.list.map((menuItem, index) => {
+                return <option key={index}>{menuItem}</option>;
               })}
             </select>
           </Grid>
@@ -148,6 +148,7 @@ const AddressInputsDetail = ({ Inputs }) => {
       case "OTHER_ADDRESS":
         return (
           <input
+            key={index}
             style={{
               marginTop: "1.4rem",
               width: "100%",
@@ -170,11 +171,11 @@ const AddressInputsDetail = ({ Inputs }) => {
 };
 
 const InputDetail = () => {
-  return formTypes.map((fType) => {
+  return formTypes.map((fType, index) => {
     switch (fType.type) {
       case 0:
         return (
-          <Grid width="100%">
+          <Grid key={index} width="100%">
             <Grid py={0.7} display="flex" alignItems="center">
               <Grid width="25%">
                 <Typography fontSize="0.9rem" variant="h3">
@@ -200,7 +201,7 @@ const InputDetail = () => {
         );
       case 1:
         return (
-          <Grid width="100%">
+          <Grid key={index} width="100%">
             <Grid py={0.7} display="flex" alignItems="center">
               <Grid width="25%">
                 <Typography fontSize="0.9rem" variant="h3">
@@ -221,7 +222,7 @@ const InputDetail = () => {
         );
       case 2:
         return (
-          <Grid width="100%">
+          <Grid key={index} width="100%">
             <Grid py={0.7} display="flex" alignItems="center">
               <Grid width="25%">
                 <Typography fontSize="0.9rem" variant="h3">
