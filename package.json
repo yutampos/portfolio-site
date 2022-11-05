@@ -16,7 +16,8 @@
     "next-videos": "^1.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.4.0"
+    "react-intersection-observer": "^9.4.0",
+    "urix": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
